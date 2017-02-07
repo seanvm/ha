@@ -1,0 +1,68 @@
+homeassistant:
+  name: Home
+  latitude: ["latitude"]
+  longitude: ["longitude"]
+  elevation: 20
+  unit_system: metric
+  time_zone: America/Vancouver
+
+frontend:
+
+http:
+  api_password: ["PASS"]
+  base_url: ["IP"]
+
+updater:
+
+discovery:
+
+conversation:
+
+history:
+
+logbook:
+
+sensor:
+  - platform: yweather
+    monitored_conditions:
+      - weather_current
+      - temp_min
+      - temp_max
+      - temperature
+
+tts:
+  platform: google
+
+insteon_local:
+  host: ["IP"]
+  username: ["USER"]
+  password: ["PASS"]
+
+light:
+  - platform: insteon_local
+  
+switch:
+  - platform: insteon_local
+
+device_tracker:
+  - platform: owntracks
+  
+mqtt:
+  broker: m11.cloudmqtt.com
+  port: ["PORT"]
+  client_id: home-assistant-1
+  keepalive: 60
+  username: ["USER"]
+  password: ["PASS"]
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    qos: 1
+    retain: true
+ 
+automation: !include automation.yaml

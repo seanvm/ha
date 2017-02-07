@@ -1,0 +1,21 @@
+#################################################################
+## Automations
+#################################################################
+
+- alias: Dining Room On
+  trigger:
+    - platform: mqtt
+      topic: 'dining_room/switch/light'
+      payload: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.dining_room
+
+- alias: Dining Room Off
+  trigger:
+    - platform: mqtt
+      topic: 'dining_room/switch/light'
+      payload: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.dining_room
