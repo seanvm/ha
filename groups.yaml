@@ -8,6 +8,10 @@ default_view:
     - group.all_insteon_lights
     - device_tracker.phone_phone
     - media_player.rasplex
+    - group.weather
+Weather:
+  name: Weather
+  entities:
     - sensor.yweather_current
     - sensor.yweather_temperature
     - sensor.yweather_temperature_max

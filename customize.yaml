@@ -17,3 +17,16 @@
 - entity_id: group.all_insteon_lights
   hidden: false
   friendly_name: 'All Lights'
+# Weather
+- entity_id: sensor.yweather_temperature
+  hidden: false
+  friendly_name: 'Temperature'
+- entity_id: sensor.yweather_temperature_max
+  hidden: false
+  friendly_name: 'High'
+- entity_id: sensor.yweather_temperature_min
+  hidden: false
+  friendly_name: 'Low'
+- entity_id: sensor.yweather_current
+  hidden: false
+  friendly_name: 'Current Weather'
