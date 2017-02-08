@@ -1,0 +1,43 @@
+#################################################################
+## Groups
+#################################################################
+
+default_view:
+  view: yes
+  entities:
+    - group.all_insteon_lights
+    - device_tracker.phone_phone
+    - media_player.rasplex
+    - sensor.yweather_current
+    - sensor.yweather_temperature
+    - sensor.yweather_temperature_max
+    - sensor.yweather_temperature_min
+All Insteon Lights:
+  name: All Insteon Lights
+  entities:
+    - switch.front_porch
+    - switch.sundeck
+    - light.basement_couch
+    - light.dining_room
+    - light.upstairs_nook
+Outside:
+  name: Outside
+  view: yes
+  entities:
+    - switch.front_porch
+    - switch.sundeck
+Basement:
+  name: Basement
+  view: yes
+  entities:
+    - light.basement_couch
+Main Floor:
+  name: Main Floor
+  view: yes
+  entities:
+    - light.dining_room
+Upstairs:
+  name: Upstairs
+  view: yes
+  entities:
+    - light.upstairs_nook

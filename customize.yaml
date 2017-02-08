@@ -1,0 +1,19 @@
+#################################################################
+## Customize
+#################################################################
+
+- entity_id: group.all_automations
+  hidden: false
+  friendly_name: 'Automations'
+- entity_id: group.all_devices
+  hidden: false
+  friendly_name: 'Devices'
+- entity_id: group.all_lights
+  hidden: false
+  friendly_name: 'Lights'
+- entity_id: group.all_switches
+  hidden: false
+  friendly_name: 'Light Switches'
+- entity_id: group.all_insteon_lights
+  hidden: false
+  friendly_name: 'All Lights'

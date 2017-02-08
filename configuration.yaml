@@ -5,6 +5,7 @@ homeassistant:
   elevation: 20
   unit_system: metric
   time_zone: America/Vancouver
+  customize: !include customize.yaml
 
 frontend:
 
