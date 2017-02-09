@@ -19,3 +19,21 @@
   action:
     - service: homeassistant.turn_off
       entity_id: light.dining_room
+
+- alias: Sean TV On
+  trigger:
+    - platform: mqtt
+      topic: 'bedroom/switch/tv'
+      payload: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.broadlink_switch
+
+- alias: Sean TV Off
+  trigger:
+    - platform: mqtt
+      topic: 'bedroom/switch/tv'
+      payload: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.broadlink_switch

@@ -50,3 +50,4 @@ Upstairs:
   view: yes
   entities:
     - light.upstairs_nook
+    - switch.broadlink_switch
