@@ -17,6 +17,10 @@
 - entity_id: group.all_insteon_lights
   hidden: false
   friendly_name: 'All Lights'
+# IR Devices
+- entity_id: switch.broadlink_switch
+  hidden: false
+  friendly_name: 'Sean TV'
 # Weather
 - entity_id: sensor.yweather_temperature
   hidden: false

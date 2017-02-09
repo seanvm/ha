@@ -44,6 +44,13 @@ light:
   
 switch:
   - platform: insteon_local
+  - platform: broadlink
+    host: !secret broadlink_ip_address
+    mac: !secret broadlink_mac_address
+    switches:
+      sean_tv:
+        command_on: 'JgBUAFATExQnEyYUJxMUEyYUFBMnExQTExQTExQAAx5NFBIVJhQmFCcTFBMnExMUJxMTFBMTExQUAAMeTRQSFCcTJxQnExMUJhQSFSYUExMTFBQTFAANBQAAAAA='
+        command_off: 'JgCMAFATKBMVEikSFRMoExQTFRIpEhUTFRIVEhUAA01QEikSFRMoExUSKRIVExUSKRIVEhUTFRIVAANMUBMoExUSKRIVEygTFRIVEikSFRMVEhUTFAADTVASKRIVEygTFRIpEhUSFRMoExUSFRIVExUAA0xQEygTFRIpEhUSKRIVExUSKRIVEhUTFRIVAA0FAAAAAAAAAAAAAAAA='
 
 device_tracker:
   - platform: owntracks
