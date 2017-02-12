@@ -20,6 +20,16 @@
     - service: homeassistant.turn_off
       entity_id: light.dining_room
 
+#Tasker publishes to MQTT when alarm clock goes off
+- alias: Morning Alarm - Bedroom On
+  trigger:
+    - platform: mqtt
+      topic: 'bedroom/switch/light'
+      payload: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.sean_bedroom
+
 - alias: Sean TV On
   trigger:
     - platform: mqtt
