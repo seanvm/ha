@@ -37,3 +37,18 @@
   action:
     - service: switch.turn_off
       entity_id: switch.broadlink_switch
+
+- alias: Turn on light when arriving home
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: device_tracker.phone_phone
+      from: 'not_home'
+      to: 'home'
+  condition:
+    - condition: time
+      after: '17:30:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.sean_bedroom
