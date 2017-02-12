@@ -9,6 +9,7 @@ default_view:
     - device_tracker.phone_phone
     - media_player.rasplex
     - group.weather
+    - group.nest
     - group.broadlink
 Weather:
   name: Weather
@@ -17,24 +18,36 @@ Weather:
     - sensor.yweather_temperature
     - sensor.yweather_temperature_max
     - sensor.yweather_temperature_min
+Nest:
+  name: Nest Thermostat
+  entities:
+    - climate.nest
+    - sensor.nest_thermostat_humidity
+    - sensor.nest_thermostat_hvac_state
+    - sensor.nest_thermostat_operation_mode
 Broadlink:
-  name: Broadlink
+  name: TV
   entities:
     - switch.broadlink_switch
+    - switch.broadlink_switch_2
 All Insteon Lights:
   name: All Insteon Lights
   entities:
     - switch.front_porch
     - switch.sundeck
+    - switch.master_deck
     - light.basement_couch
     - light.dining_room
     - light.upstairs_nook
+    - light.sean_bedroom
+    - light.bathroom
 Outside:
   name: Outside
   view: yes
   entities:
     - switch.front_porch
     - switch.sundeck
+    - switch.master_deck
 Basement:
   name: Basement
   view: yes
@@ -50,4 +63,6 @@ Upstairs:
   view: yes
   entities:
     - light.upstairs_nook
+    - light.sean_bedroom
+    - light.bathroom
     - switch.broadlink_switch
