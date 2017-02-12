@@ -9,10 +9,6 @@ homeassistant:
 
 frontend:
 
-http:
-  api_password: !secret api_password 
-  base_url: !secret base_url
-
 updater:
 
 discovery:
@@ -23,6 +19,14 @@ history:
 
 logbook:
 
+sun:
+  
+custom_service:
+
+http:
+  api_password: !secret api_password 
+  base_url: !secret base_url
+  
 sensor:
   - platform: yweather
     monitored_conditions:
@@ -49,9 +53,11 @@ switch:
     mac: !secret broadlink_mac_address
     switches:
       sean_tv:
+        friendly_name: "TV On/Off"
         command_on: 'JgBUAFATExQnEyYUJxMUEyYUFBMnExQTExQTExQAAx5NFBIVJhQmFCcTFBMnExMUJxMTFBMTExQUAAMeTRQSFCcTJxQnExMUJhQSFSYUExMTFBQTFAANBQAAAAA='
         command_off: 'JgCMAFATKBMVEikSFRMoExQTFRIpEhUTFRIVEhUAA01QEikSFRMoExUSKRIVExUSKRIVEhUTFRIVAANMUBMoExUSKRIVEygTFRIVEikSFRMVEhUTFAADTVASKRIVEygTFRIpEhUSFRMoExUSFRIVExUAA0xQEygTFRIpEhUSKRIVExUSKRIVEhUTFRIVAA0FAAAAAAAAAAAAAAAA='
       sean_tv_play:
+        friendly_name: "TV Play/Pause"
         command_on: 'JgCqAFATFRIpEhUTKBMoExUSFRMoEygTKBMVEikSFRMUEygAAohQExQTKBMVEikSKRIVExUSKRIpEikSFRMoExQTFRIpAAKHUBMVEikSFRMoEygTFBMVEikSKRIpEhUTKBMVEhUTKAACf1ASFRIpEhUTKBMoExUSFRMoEygTKBMVEikSFRMUEygAAn9QEhUTKBMVEikSKRIVExQTKBMoEykSFRIpEhUTFRIpAA0FAAAAAAAAAAAAAAAAAAA='
         command_off: 'JgCqAFASKRIVExQTKBMpEhUSFRMoEygTKBMVEikSFRMUEygAAohQEikSFRMVEikSKRIVExQTKBMoEykSFRIpEhUTFRIpAAKHUBMoExUSFRIpEikSFRMVEikSKRIpEhUTKBMVEhUSKQACh1ATKBMVEhUTKBMoExUSFRMoEygTKBMVEikSFRMUEygAAohQEygTFBMVEikSKRIVExUSKRIpEikSFRMoExUSFRIpAA0FAAAAAAAAAAAAAAAAAAA='
 
@@ -79,6 +85,8 @@ mqtt:
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
- 
+
 automation: !include automation.yaml
 group: !include groups.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml

@@ -1,0 +1,12 @@
+- name: Bedroom normal
+  entities:
+    light.sean_bedroom:
+      state: on
+      transition: 2
+      brightness: 150
+- name: Bedroom dim
+  entities:
+    light.sean_bedroom:
+      state: on
+      transition: 2
+      brightness: 75

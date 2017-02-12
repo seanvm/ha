@@ -2,7 +2,7 @@
 ## Automations
 #################################################################
 
-- alias: Dining Room On
+- alias: "Dining Room On"
   trigger:
     - platform: mqtt
       topic: 'dining_room/switch/light'
@@ -11,7 +11,7 @@
     - service: homeassistant.turn_on
       entity_id: light.dining_room
 
-- alias: Dining Room Off
+- alias: "Dining Room Off"
   trigger:
     - platform: mqtt
       topic: 'dining_room/switch/light'
@@ -21,7 +21,7 @@
       entity_id: light.dining_room
 
 #Tasker publishes to MQTT when alarm clock goes off
-- alias: Morning Alarm - Bedroom On
+- alias: "Morning Alarm - Bedroom On"
   trigger:
     - platform: mqtt
       topic: 'bedroom/switch/light'
@@ -30,7 +30,7 @@
     - service: homeassistant.turn_on
       entity_id: light.sean_bedroom
 
-- alias: Sean TV On
+- alias: "Sean TV On"
   trigger:
     - platform: mqtt
       topic: 'bedroom/switch/tv'
@@ -39,7 +39,7 @@
     - service: switch.turn_on
       entity_id: switch.broadlink_switch
 
-- alias: Sean TV Off
+- alias: "Sean TV Off"
   trigger:
     - platform: mqtt
       topic: 'bedroom/switch/tv'
@@ -48,7 +48,7 @@
     - service: switch.turn_off
       entity_id: switch.broadlink_switch
 
-- alias: Turn on light when arriving home
+- alias: "Turn on light when arriving home"
   initial_state: True
   hide_entity: False
   trigger:
@@ -62,3 +62,31 @@
   action:
     - service: light.turn_on
       entity_id: light.sean_bedroom
+
+- alias: "Media player paused/stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.rasplex
+      from: 'playing'
+      to: 'idle'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+      service: scene.turn_on
+      entity_id: scene.bedroom_normal
+
+- alias: "Media player playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.rasplex
+      to: 'playing'
+      from: 'idle'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+      service: scene.turn_on
+      entity_id: scene.bedroom_dim
